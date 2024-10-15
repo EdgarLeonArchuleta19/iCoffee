@@ -16,6 +16,7 @@
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        ref="navbarToggler"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,20 +25,20 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Inicio</router-link>
+            <router-link class="nav-link" to="/cliente/home" @click="closeMenu">Inicio</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/menu">Ordenar</router-link>
+            <router-link class="nav-link" to="/cliente/menu" @click="closeMenu">Ordenar</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/contacto">Contacto</router-link>
+            <router-link class="nav-link" to="/cliente/contacto" @click="closeMenu">Contacto</router-link>
           </li>
         </ul>
 
         <!-- Íconos de carrito y cuenta usando Bootstrap Icons -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link class="nav-link" to="/carrito">
+            <router-link class="nav-link" to="/cliente/carrito" @click="closeMenu">
               <i class="bi bi-cart"></i> Carrito
             </router-link>
           </li>
@@ -54,19 +55,19 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <li>
-                <router-link class="dropdown-item" to="/perfil">Ver Perfil</router-link>
+                <router-link class="dropdown-item" to="/cliente/perfil" @click="closeMenu">Ver Perfil</router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/configuracion">Configuración</router-link>
+                <router-link class="dropdown-item" to="/cliente/configuracion" @click="closeMenu">Configuración</router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/historial">Historial de Pedidos</router-link>
+                <router-link class="dropdown-item" to="/cliente/historial" @click="closeMenu">Historial de Pedidos</router-link>
               </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <router-link class="dropdown-item" to="/cerrar-sesion">Cerrar Sesión</router-link>
+                <router-link class="dropdown-item" to="/cerrar-sesion" @click="closeMenu">Cerrar Sesión</router-link>
               </li>
             </ul>
           </li>
@@ -78,13 +79,22 @@
 
 <script>
 export default {
-  name: 'Navbar',
+  name: "Navbar",
+  methods: {
+    closeMenu() {
+      // Detecta si el botón de colapsar está visible (solo visible en dispositivos móviles)
+      const navbarToggler = this.$refs.navbarToggler;
+      if (window.getComputedStyle(navbarToggler).display !== "none") {
+        navbarToggler.click(); // Simula un clic en el botón de colapsar
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .navbar {
-  background-color: #FFA500; /* Color naranja */
+  background-color: #FFA500; /* Color naranja fuerte */
 }
 
 .navbar-brand {
@@ -108,5 +118,4 @@ export default {
 .dropdown-menu {
   right: 0; /* Alinea el menú desplegable a la derecha */
 }
-
 </style>
