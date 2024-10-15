@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex">
-    <div class="side-menu bg-primary text-white d-flex flex-column">
+    <div class="side-menu d-flex flex-column">
       <!-- Logo Section -->
       <div class="logo-section text-center py-4">
         <img src="@/assets/Logo iCoffee.png" alt="iCoffee Admin Logo" class="img-fluid logo">
@@ -82,8 +82,8 @@ export default {
 
 <style scoped>
 .side-menu {
-  width: 250px;
-  min-height: 100vh;
+  width: 250px; /* Ancho fijo para el sidemenu */
+  min-height: 100vh; /* Asegúrate de que ocupe toda la altura */
   background-color: #09233e; /* Azul mate más claro */
   position: fixed; /* Haciendo el sidemenu estático */
 }

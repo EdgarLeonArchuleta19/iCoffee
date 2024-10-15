@@ -2,15 +2,21 @@
   <div class="login-container">
     <div class="login-box">
       <img src="@/assets/Logo iCoffee.png" alt="iCoffee Logo" class="logo" />
-      <h2>Iniciar Sesión - Cliente</h2>
+      <h2>Iniciar Sesión</h2>
       <form @submit.prevent="login">
         <input type="text" v-model="username" placeholder="Correo Institucional" />
         <input type="password" v-model="password" placeholder="Contraseña" />
-        <button type="submit">Ingresar</button>
+        <div class="button-group">
+          <button @click="volverSeleccion" class="back-button">Regresar</button>
+          <button type="submit" class="login-button">Ingresar</button>
+        </div>
       </form>
 
-      <!-- Botón para regresar al menú de selección -->
-      <button @click="volverSeleccion" class="back-button">Regresar al menú</button>
+      <p class="register-text">
+        ¿No tienes una cuenta? 
+        <router-link to="/registro-cliente" class="register-link">Regístrate aquí</router-link>
+      </p>
+      credenciales: 1234 - 1234
     </div>
   </div>
 </template>
@@ -59,8 +65,13 @@ export default {
 }
 
 .logo {
-  width: 80px;
-  margin-bottom: 20px;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+h2{
+  color: white;
+  margin-bottom: 50px;
 }
 
 input {
@@ -73,28 +84,41 @@ input {
   font-size: 14px;
 }
 
-button {
-  width: 100%;
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.login-button,
+.back-button {
+  width: 48%;
   background-color: #2a4c96;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-button:hover {
+.login-button:hover,
+.back-button:hover {
   background-color: #1e3570;
 }
 
-.back-button {
+.register-text {
   margin-top: 15px;
-  background-color: #f5f5f5;
-  color: #333;
+  font-size: 14px;
+  color: white; /* Color de texto blanco para el párrafo */
 }
 
-.back-button:hover {
-  background-color: #ddd;
+.register-link {
+  color: #2a4c96;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link:hover {
+  text-decoration: underline;
 }
 </style>
