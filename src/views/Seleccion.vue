@@ -7,11 +7,13 @@
     <div class="tarjetas-container">
       <router-link class="tarjeta" to="/login-cliente">
         <div class="tarjeta-contenido">
+          <i class="bi bi-person-fill icono"></i>
           <h2>Cliente</h2>
         </div>
       </router-link>
       <router-link class="tarjeta" to="/login-admin">
         <div class="tarjeta-contenido">
+          <i class="bi bi-person-badge-fill icono"></i>
           <h2>Administrador</h2>
         </div>
       </router-link>
@@ -40,17 +42,18 @@ export default {
 }
 
 .logo-container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .logo {
-  width: 150px;
+  width: 280px; /* Logo más grande */
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.8em;
+  margin-bottom: 60px;
   color: #fff;
+  text-align: center;
 }
 
 .tarjetas-container {
@@ -63,8 +66,8 @@ h1 {
 
 .tarjeta {
   text-decoration: none;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,53 +84,68 @@ h1 {
 }
 
 .tarjeta-contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 .tarjeta-contenido h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Estilos para los íconos */
+.icono {
+  font-size: 2.5em;
+  color: #2a4c96;
 }
 
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
   .tarjeta {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
   }
 
   .logo {
-    width: 120px;
+    width: 240px;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 2.3em;
     margin-bottom: 30px;
   }
 
   .tarjeta-contenido h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 }
 
 /* Responsividad para pantallas muy pequeñas (teléfonos) */
 @media (max-width: 480px) {
   .tarjeta {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
 
   .logo {
-    width: 100px;
+    width: 220px;
   }
 
   h1 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 40px;
   }
 
   .tarjeta-contenido h2 {
     font-size: 1.1em;
+  }
+
+  .icono {
+    font-size: 2em;
   }
 }
 </style>

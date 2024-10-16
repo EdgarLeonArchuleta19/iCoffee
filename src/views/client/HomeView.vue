@@ -5,7 +5,7 @@
       <div class="container">
         <h1 class="display-4">¡Tu comida favorita, listo para recoger en segundos!</h1>
         <p class="lead">Explora nuestro menú y realiza pedidos fácilmente desde cualquier lugar del campus.</p>
-        <router-link to="/menu" class="btn btn-lg btn-naranja mt-3">Ver Menú</router-link>
+        <router-link to="/cliente/menu" class="btn btn-lg btn-naranja mt-3">Ver Menú</router-link>
       </div>
     </section>
 
@@ -55,7 +55,7 @@
               <div class="card-body">
                 <h5 class="card-title">Café Americano</h5>
                 <p class="card-text">$3.00</p>
-                <router-link to="/menu" class="btn btn-naranja">Ver Menú</router-link>
+                <router-link to="/cliente/menu" class="btn btn-naranja">Ver Menú</router-link>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@
               <div class="card-body">
                 <h5 class="card-title">Cappuccino</h5>
                 <p class="card-text">$3.50</p>
-                <router-link to="/menu" class="btn btn-naranja">Ver Menú</router-link>
+                <router-link to="/cliente/menu" class="btn btn-naranja">Ver Menú</router-link>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
               <div class="card-body">
                 <h5 class="card-title">Croissant</h5>
                 <p class="card-text">$2.50</p>
-                <router-link to="/menu" class="btn btn-naranja">Ver Menú</router-link>
+                <router-link to="/cliente/menu" class="btn btn-naranja">Ver Menú</router-link>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
       <div class="container">
         <h2>Contáctanos</h2>
         <p>¿Tienes alguna duda o sugerencia? ¡Queremos saber de ti!</p>
-        <router-link to="/contacto" class="btn btn-naranja">Ir a Contacto</router-link>
+        <router-link to="/cliente/contacto" class="btn btn-naranja">Ir a Contacto</router-link>
       </div>
     </section>
   </div>
